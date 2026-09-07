@@ -1,0 +1,31 @@
+#natural-reader-card {
+  position: fixed;
+  z-index: 2147483647;
+  display: inline-block;
+  width: max-content;
+  max-width: min(420px, calc(100vw - 28px));
+  box-sizing: border-box;
+  padding: 15px 17px;
+  border: 1px solid rgba(25, 30, 45, .10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .98);
+  color: #1c1d22;
+  box-shadow: 0 12px 36px rgba(18, 24, 40, .16), 0 2px 8px rgba(18, 24, 40, .08);
+  font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  animation: nr-in 120ms ease-out;
+}
+.nr-kicker { margin-bottom: 5px; color: #7a7f8c; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.nr-translation { max-width: min(380px, calc(100vw - 64px)); padding-right: 18px; font-size: 19px; font-weight: 650; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.nr-loading-card, .nr-result-card { right: 18px; bottom: 18px; left: auto !important; top: auto !important; }
+.nr-loading-card { min-width: 112px; padding: 10px 13px; }
+.nr-loading-card .nr-progress { white-space: nowrap; }
+.nr-result-card { min-width: 0; }
+.nr-progress { display: flex; align-items: center; gap: 9px; color: #565d6b; font-size: 13px; font-weight: 550; }
+.nr-spinner { width: 13px; height: 13px; border: 2px solid #d9deea; border-top-color: #6878f5; border-radius: 50%; animation: nr-spin 700ms linear infinite; }
+.nr-close { position: absolute; top: 7px; right: 8px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: #9298a5; font-size: 19px; line-height: 20px; cursor: pointer; }
+.nr-close:hover { background: #f0f2f6; color: #424754; }
+.nr-error-card { border-color: rgba(190, 55, 55, .18); }
+.nr-error-title { margin-bottom: 3px; color: #a43d43; font-weight: 700; }
+.nr-error-text { color: #6d4b4d; font-size: 12px; }
+@keyframes nr-spin { to { transform: rotate(360deg); } }
+@keyframes nr-in { from { opacity: 0; transform: translateY(4px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }

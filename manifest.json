@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Natural Reader",
+  "version": "0.1.0",
+  "description": "Explain English naturally in Simplified Chinese.",
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "host_permissions": ["https://openrouter.ai/*"],
+  "background": { "service_worker": "service-worker.js" },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_title": "Natural Reader", "default_popup": "popup.html" },
+  "commands": {
+    "translate-selection": {
+      "suggested_key": { "default": "Alt+Shift+T", "mac": "MacCtrl+Shift+T" },
+      "description": "Explain selected English in Chinese"
+    }
+  }
+}
